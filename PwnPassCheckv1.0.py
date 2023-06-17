@@ -55,7 +55,7 @@ for pwnd_pass in pwnd_list:
     pwnd_dict[pwnd_hash[0]] = pwnd_hash[1]
 
 if sha_postfix in pwnd_dict.keys():
-    negative_funny_messages = [
+    negative_messages = [
     "Uh-oh! Your password has been compromised {0} times. Time to face the password-pocalypse and level up your password game!",
     "Whoopsie-daisy! Your password has been busted {0} times. Looks like it's time to bid farewell to your old password and say hello to a stronger one!",
     "Oh no! Your password has been caught red-handed {0} times. It's time to give it a makeover and transform it into a password ninja!",
@@ -65,10 +65,14 @@ if sha_postfix in pwnd_dict.keys():
     "Attention! Your password has been spotted in {0} security breaches. Put on your password superhero cape and save the day with a stronger shield!",
     "Eek! Your password has been caught {0} times. It's time to play hide-and-seek with the hackers and create a password they'll never find!"
     ]
-    negative_random_message = random.choice(negative_funny_messages)
+    negative_random_message = random.choice(negative_messages)
     print("\n" + negative_random_message.format(pwnd_dict[sha_postfix]))
+
+
+
+    #print("\nUh-oh! Your password has been compromised {0} times. It's time to unleash your creativity and come up with a stronger password!".format(pwnd_dict[sha_postfix]))
 else:
-    positive_funny_messages = [
+    positive_messages = [
     "Congratulations! Your password is as safe as a fluffy unicorn dancing on rainbows. Keep up the good work!",
     "You've managed to create a password that even Einstein couldn't crack. Impressive!",
     "Your password is so strong that it can bench press other passwords. Amazing!",
@@ -104,5 +108,5 @@ else:
     "Your password is a guardian angel, keeping your accounts safe and sound.",
     "You deserve a gold medal for your password. It's a winner!"
     ]
-    positive_random_message = random.choice(positive_funny_messages)
+    positive_random_message = random.choice(positive_messages)
     print("\n" + positive_random_message)
